@@ -50,6 +50,7 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2q5-Gw-htN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1Rs-fg-heS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1GX-Pz-2UB" secondAttribute="trailing" id="8jb-F3-8pS"/>
@@ -74,13 +75,22 @@
                                 <exclude reference="rGR-1w-lBm"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DTx-nn-dWW" appends="YES" id="Wkq-8j-ivw"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="PersonalLabel" destination="mGg-Fo-ohL" id="XSw-aK-zk1"/>
+                        <outlet property="myField" destination="2q5-Gw-htN" id="zhH-EW-G2n"/>
                         <outlet property="myPickView" destination="1GX-Pz-2UB" id="0js-79-P7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DTx-nn-dWW">
+                    <connections>
+                        <action selector="gestureAction:" destination="BYZ-38-t0r" id="M3c-zx-e6b"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="418"/>
         </scene>

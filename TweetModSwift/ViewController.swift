@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var myPickView: UIPickerView!
+    @IBOutlet weak var myField: UITextField!
     
     @IBOutlet weak var PersonalLabel: UILabel!
     
@@ -52,15 +53,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tweetButton(sender: AnyObject) {
-        let t1 : Int = myPickView.selectedRowInComponent(0)
-        let t2 : Int = myPickView.selectedRowInComponent(1)
         
-        tweet = personalPronoun + myPickerData[0][t1] + " " + myPickerData[1][t2] + " " + hashtag
+        tweet = myField.text!
+        
+        if(tweet == ""){
+            let t1 : Int = myPickView.selectedRowInComponent(0)
+            let t2 : Int = myPickView.selectedRowInComponent(1)
+            
+            tweet = personalPronoun + myPickerData[0][t1] + " " + myPickerData[1][t2] + " " + hashtag
+        }
         
         print(tweet)
         
     }
 
+    @IBAction func gestureAction(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
 
 
 }
