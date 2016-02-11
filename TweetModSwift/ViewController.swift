@@ -12,12 +12,19 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var myPickView: UIPickerView!
     
-    var myPickerData : [[String]] = [[String]]()
+    @IBOutlet weak var PersonalLabel: UILabel!
     
+    
+    var myPickerData : [[String]] = [[String]]()
+    var hashtag : String = "#Swift #Cours #FirstAppIOS"
+    var personalPronoun : String = ""
+    var tweet : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        personalPronoun = PersonalLabel.text!
         
         //data in picket
         myPickerData = [["dors","mange","suis en cours","galère","cours","poireaute"],
@@ -42,6 +49,16 @@ class ViewController: UIViewController {
     // The data to return for the row and component (column) that's being passed in
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return myPickerData[component][row]
+    }
+    
+    @IBAction func tweetButton(sender: AnyObject) {
+        let t1 : Int = myPickView.selectedRowInComponent(0)
+        let t2 : Int = myPickView.selectedRowInComponent(1)
+        
+        tweet = personalPronoun + myPickerData[0][t1] + " " + myPickerData[1][t2] + " " + hashtag
+        
+        print(tweet)
+        
     }
 
 

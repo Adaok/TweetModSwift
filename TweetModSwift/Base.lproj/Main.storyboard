@@ -22,6 +22,9 @@
                                 <rect key="frame" x="269" y="515" width="63" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Tweet it !"/>
+                                <connections>
+                                    <action selector="tweetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rku-Ol-uDR"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap your personalized tweet !" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2q5-Gw-htN">
                                 <rect key="frame" x="20" y="28" width="560" height="30"/>
@@ -29,8 +32,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGg-Fo-ohL">
-                                <rect key="frame" x="20" y="107" width="37" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Je " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGg-Fo-ohL">
+                                <rect key="frame" x="20" y="107" width="23" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -72,6 +75,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="PersonalLabel" destination="mGg-Fo-ohL" id="XSw-aK-zk1"/>
+                        <outlet property="myPickView" destination="1GX-Pz-2UB" id="0js-79-P7S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
