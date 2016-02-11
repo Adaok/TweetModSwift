@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ViewController: UIViewController {
 
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
         
         //data in picket
         myPickerData = [["dors","mange","suis en cours","galère","cours","poireaute"],
-            ["🙂","😉","😟","😮","😃","😄","😎"]]
+            [":)",";)",":(",":o",":D",":'D","B-)"]]
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +55,8 @@ class ViewController: UIViewController {
     
     @IBAction func tweetButton(sender: AnyObject) {
         
+
+        
         tweet = myField.text!
         
         if(tweet == ""){
@@ -63,7 +66,16 @@ class ViewController: UIViewController {
             tweet = personalPronoun + myPickerData[0][t1] + " " + myPickerData[1][t2] + " " + hashtag
         }
         
-        print(tweet)
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+            
+            var tweetDialog = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            
+            tweetDialog.setInitialText(tweet)
+            
+            self.presentViewController(tweetDialog, animated: true, completion: nil)
+        } else {
+            print("error")
+        }
         
     }
 
